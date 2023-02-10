@@ -4,9 +4,9 @@ A new Flutter project.
 
 ## Getting Started
 
-Your Name: " "
+Your Name: " Zuhair Raed"
 
-Your Email: " "
+Your Email: "Zuhair.raed@rhinosoft.io"
 
-Your Phone Number: " "
+Your Phone Number: "0788663982"
 
