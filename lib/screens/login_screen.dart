@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_task/core/application.dart';
 import 'package:flutter_auth_task/style/app_styles.dart';
@@ -15,6 +16,8 @@ class LoginScreen extends HookConsumerWidget {
   Widget build(BuildContext context, ref) {
     final passwordController = useTextEditingController();
     final color = Theme.of(context).colorScheme;
+    final dio = Dio();
+    Response response;
     return Scaffold(
         body: SafeArea(
       child: SingleChildScrollView(
@@ -55,6 +58,17 @@ class LoginScreen extends HookConsumerWidget {
                           ),
                         ),
                         onPressed: () async {
+                          response = await dio.post(
+                              'https://services.himam.com/api/auht/login',
+                              data: {
+                                'email': 'muhammad.alfaqoui@gmail.com',
+                                'password': "12345678"
+                              });
+                          if (response.statusCode == 200) {
+                            String token = response.data['twoFactorToken'];
+                            print(token);
+                          }
+
                           //TODO: Login
                         },
                         child:

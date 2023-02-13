@@ -7,8 +7,6 @@ import 'core/application.dart';
 import 'core/lang/app_localizations.dart';
 import 'style/style.dart';
 
-
-
 Future<void> initApp() async {
   Paint.enableDithering = true;
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +31,7 @@ class MyApp extends StatelessWidget {
         final local = ref.watch(langProvider);
         final theme = ref.watch(themeProvider);
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           locale: local,
           theme: Style.lightTheme(context),
           themeMode: theme,

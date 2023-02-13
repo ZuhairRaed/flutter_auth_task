@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     //TODO: replace "Developer" with the name of the user
-    const String userName = 'Developer';
+    const String userName = 'muhammad.alfaqoui@gmil.com';
     return Stack(
       alignment: Alignment.center,
       children: [
