@@ -12,10 +12,13 @@ class EmailField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final validator = MultiValidator([
+      EmailValidator(errorText: 'Enter a valid email address'),
+      RequiredValidator(errorText: 'An email is required'),
+    ]);
     return TextFormField(
       decoration: AppStyles.formStyle('example@domain.com'),
-      validator: EmailValidator(errorText: 'Enter a valid email address'),
-      autovalidateMode: AutovalidateMode.always,
+      validator: validator,
     );
   }
 }
