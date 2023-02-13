@@ -38,10 +38,6 @@ flutter:
   # IMPORTANT: Dont dare to change this
   assets:
     - assets/lang/
-    - assets/images/
-    - assets/animation/
-    - assets/svgs/
-
   # Note: Use this only if you want to get font outside from google font package
   fonts:
     - family: Poppins
