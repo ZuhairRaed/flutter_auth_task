@@ -2,10 +2,13 @@ import 'dart:math';
 
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_task/core/providers/user_provider.dart';
 import 'package:flutter_auth_task/style/style.dart';
+import 'package:provider/provider.dart' as p;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+  static String id = '/HomeScreen';
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -30,7 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     //TODO: replace "Developer" with the name of the user
-    const String userName = 'Developer';
+    final user = p.Provider.of<UserProvider>(context);
+    const String userName =  'Developer';
     return Stack(
       alignment: Alignment.center,
       children: [

@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_auth_task/core/providers/user_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:provider/provider.dart' as p;
+import '../core/controllers/controllers_exporter.dart';
 import '/core/application.dart';
 import '../../style/style.dart';
 
 class VerfyEmailScreen extends HookConsumerWidget {
-  final String email;
+  final String? email;
   const VerfyEmailScreen({Key? key, required this.email}) : super(key: key);
+
+static String id = '/VerfyEmailScreen';
 
   @override
   Widget build(BuildContext context, ref) {
-    final codeController = useTextEditingController();
-
+    final codeController = TextEditingController();
+    final user = p.Provider.of<UserProvider>(context);
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -31,7 +35,7 @@ class VerfyEmailScreen extends HookConsumerWidget {
               style: Style.mainFont.bodySmall,
             ),
             Text(
-              email,
+              email ?? '',
               style: Style.mainFont.bodySmall?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -72,7 +76,7 @@ class VerfyEmailScreen extends HookConsumerWidget {
               controller: codeController,
               keyboardType: TextInputType.text,
               onCompleted: (v) async {
-                //TODO: add the code to verify the email
+               await UserController.verifyEmailCredintials(context: context, code: 'MUBQ', tocken: await user.getString('Token') ?? '');
               },
               onChanged: (value) {
                 debugPrint(value);
