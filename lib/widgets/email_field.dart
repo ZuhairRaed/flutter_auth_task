@@ -17,6 +17,7 @@ class EmailField extends StatelessWidget {
       RequiredValidator(errorText: 'An email is required'),
     ]);
     return TextFormField(
+      controller: emailController,
       decoration: AppStyles.formStyle('example@domain.com'),
       validator: validator,
     );

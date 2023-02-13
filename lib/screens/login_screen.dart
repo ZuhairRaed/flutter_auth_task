@@ -46,7 +46,12 @@ class LoginScreen extends HookConsumerWidget {
                 TextFieldTitle(title: application.translate('password')),
                 PasswordField(passwordController: passwordController),
                 const SizedBox(height: 32),
-                const Center(child: LoginButton()),
+                Center(
+                  child: LoginButton(
+                    emailController: emailController,
+                    passwordController: passwordController,
+                  ),
+                ),
                 const SizedBox(height: 32),
               ],
             ),
