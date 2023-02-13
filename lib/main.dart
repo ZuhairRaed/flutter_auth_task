@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_task/core/application.dart';
+import 'package:flutter_auth_task/core/lang/app_localizations.dart';
 import 'package:flutter_auth_task/screens/login_screen.dart';
-import 'package:flutter_auth_task/core/managers/user_manager.dart';
+import 'package:flutter_auth_task/style/style.dart';
+
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import 'core/application.dart';
-import 'core/lang/app_localizations.dart';
-import 'style/style.dart';
-
-
+import 'package:flutter_auth_task/core/managers/user_manager.dart';
 
 Future<void> initApp() async {
   Paint.enableDithering = true;
@@ -38,7 +36,7 @@ class MyApp extends StatelessWidget {
           themeMode: theme,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales(),
-          home: const LoginScreen(),
+          home: LoginScreen(),
         );
       },
     );

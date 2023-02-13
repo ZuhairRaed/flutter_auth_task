@@ -4,8 +4,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_auth_task/core/application.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import '/core/application.dart';
 
 class AppLocalizations {
   final Locale locale;

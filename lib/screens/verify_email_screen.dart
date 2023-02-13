@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_task/core/application.dart';
+import 'package:flutter_auth_task/style/style.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import '/core/application.dart';
-import '../../style/style.dart';
 
 class VerfyEmailScreen extends HookConsumerWidget {
   final String email;

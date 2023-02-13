@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_task/controllers/auth_provider.dart';
+
+import 'package:flutter_auth_task/core/lang/app_localizations.dart';
+import 'package:flutter_auth_task/core/managers/user_manager.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sprintf/sprintf.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '/core/managers/user_manager.dart';
-
-import 'lang/app_localizations.dart';
-
 final themeProvider = StateProvider<ThemeMode>((ref) => UserManager().appTheme);
 final langProvider = StateProvider<Locale>((ref) => UserManager().appLang);
+final authProvider = StateProvider<AuthProvider>((ref) => AuthProvider());
 
 class Application {
   static final Application _application = Application._internal();
@@ -82,7 +83,6 @@ class Application {
       debugPrint('Could not launch location');
     }
   }
-
 
   Future<void> lunchPhone({required String phoneNumber}) async {
     final Uri params = Uri(

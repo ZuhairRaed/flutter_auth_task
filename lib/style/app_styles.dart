@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'style.dart';
+import 'package:flutter_auth_task/style/style.dart';
 
 class AppStyles {
   static InputDecoration formStyle(

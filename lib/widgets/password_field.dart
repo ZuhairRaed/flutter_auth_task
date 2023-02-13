@@ -20,7 +20,6 @@ class _PasswordFieldState extends State<PasswordField> {
     final color = Theme.of(context).colorScheme;
     return TextFormField(
       obscureText: !showPassword,
-
       decoration: AppStyles.formStyle(
         'xxxxxxxxx',
         suffixIcon: InkWell(

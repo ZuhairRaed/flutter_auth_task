@@ -4,9 +4,9 @@ A new Flutter project.
 
 ## Getting Started
 
-Your Name: " "
+Your Name: "Ammar Omari"
 
-Your Email: " "
+Your Email: "ammaromari7077@gmail.com"
 
-Your Phone Number: " "
+Your Phone Number: "0790065649"
 
